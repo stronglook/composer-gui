@@ -1,0 +1,60 @@
+QMenu
+{
+    background: #2d2f39;
+    color: #9ea1b3;
+}
+
+QMenu:selected
+{
+    background:#262831;
+}
+
+QScrollBar::handle:vertical
+{
+    background: #1b1b1b;
+}
+
+QScrollBar::handle:vertical:hover
+{
+    background: #9ea1b3;
+}
+
+QScrollBar:vertical
+{
+    border: 3px solid #505050;
+    background: #505050;
+    width: 11px;
+}
+
+QScrollBar::add-line:vertical
+{
+    width: 0px;
+    height: 0px;
+}
+
+QScrollBar::sub-line:vertical
+{
+    width: 0px;
+    height: 0px;
+}
+
+QPlainTextEdit
+{
+    background: #2e3b44;
+    color: #ffffff;
+}
+
+QListView
+{
+    padding-top:2px;
+}
+
+QScrollArea { background: transparent; }
+QScrollArea > QWidget > QWidget { background: transparent; }
+QScrollArea > QWidget > QScrollBar { background: palette(base); }
+
+QListView#dependencies_view
+{
+    min-height: 110px;
+    max-height: 110px;
+}
