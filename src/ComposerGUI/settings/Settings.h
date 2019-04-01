@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include <QTabWidget>
 #include <QSpinBox>
 #include <QLineEdit>
 #include <QSettings>
@@ -12,7 +12,7 @@ namespace composer_gui
 namespace settings
 {
 
-class Settings : public QWidget
+class Settings : public QTabWidget
 {
 public:
     Settings(QWidget *parent = nullptr);
@@ -25,10 +25,13 @@ private:
     QSpinBox *m_packagistSearchLimit;
     QLineEdit *m_phpBinaryPath;
     QLineEdit *m_composerBinaryPath;
+    QLineEdit *m_httpProxy;
+    QLineEdit *m_httpsProxy;
 
     QHBoxLayout *createFileLayout(QLineEdit *pathHolder);
-    QGroupBox *createGeneralSettingsBox();
-    QGroupBox *createBinariesSettingsBox();
+    QWidget *createGeneralSettings();
+    QWidget *createBinariesSettings();
+    QWidget *createProxySettings();
 };
 
 } // settings

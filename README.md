@@ -5,7 +5,8 @@ Welcome to **ComposerGUI**, Graphical client for Composer.
 
 ### Who is this program for ###
 
-This program is designed for PHP developers who use Composer to manage dependencies in projects.
+This program is designed for PHP developers who use Composer to manage dependencies in projects.  
+Written in C++ using the Qt framework.
 
 ### Supported platforms ###
 
