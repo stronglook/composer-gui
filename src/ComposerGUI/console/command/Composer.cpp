@@ -2,6 +2,7 @@
 #include <QProcess>
 #include <QFileInfo>
 #include <QIODevice>
+#include <QtGlobal>
 
 #include "globals.h"
 #include "Composer.h"
@@ -13,7 +14,9 @@ namespace console
 namespace command
 {
 
-Composer::Composer(QObject *parent) : AbstractCommand(parent)
+Composer::Composer(QObject *parent)
+    : AbstractCommand(parent),
+      m_settings(COMPOSERGUI_ORGANIZATION_NAME, COMPOSERGUI_SETTINGS_APPLICATION)
 {
 
 }
@@ -22,10 +25,8 @@ void Composer::run()
 {
     emit started(getCommand());
 
-    QSettings settings(COMPOSERGUI_ORGANIZATION_NAME, COMPOSERGUI_SETTINGS_APPLICATION);
-
-    QString phpPath = settings.value("php_binary_path").toString();
-    QString composerPath = settings.value("composer_binary_path").toString();
+    QString phpPath = m_settings.value("php_binary_path").toString();
+    QString composerPath = m_settings.value("composer_binary_path").toString();
 
     if (!QFileInfo(phpPath).exists()) {
         emit message("PHP binary not found at " + phpPath);
@@ -38,6 +39,9 @@ void Composer::run()
         emit finished(getCommand());
         return;
     }
+
+    qputenv("http_proxy", m_settings.value("var_http_proxy").toByteArray());
+    qputenv("https_proxy", m_settings.value("var_https_proxy").toByteArray());
 
     QProcess proc;
 

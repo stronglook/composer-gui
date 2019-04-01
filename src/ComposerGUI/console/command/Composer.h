@@ -1,5 +1,7 @@
 #pragma once
 
+#include <QSettings>
+
 #include "AbstractCommand.h"
 
 namespace composer_gui
@@ -15,6 +17,9 @@ class Composer : public AbstractCommand
 public:
     explicit Composer(QObject *parent = nullptr);
     void run() override;
+
+private:
+    QSettings m_settings;
 };
 
 } // command

@@ -14,7 +14,8 @@ Written in C++ using the Qt framework.
 
 ### Downloads ###
 
-* Windows: https://bit.ly/composer-gui-v1-0-0-win
+* v1-0-0 Windows: https://bit.ly/composer-gui-v1-0-0-win
+* v1-1-0 Windows: https://bit.ly/composer-gui-v1-1-0-win
 
 ### Future Plans ###
 
@@ -28,6 +29,7 @@ Written in C++ using the Qt framework.
   * Almost complete set of fields for generating the composer.json file.
   * Parallel installation and update projects.
   * Managing worker threads.
+  * HTTP proxy support.
   * Embedded console with standard command set including PHP and Composer execution.
   * Packagist API integration.
 
@@ -44,7 +46,7 @@ It is also possible to search for dependent packages in the Packagist repository
 
 To work with PHP and Composer, you must specify the path to the corresponding binary files.  
 Before you start, make sure that the binary files you provide are not damaged and correspond to your operating system.
-[![Application settings](https://github.com/composer-gui/composer-gui/blob/master/screenshots/application-settings.png?raw=true)](https://github.com/composer-gui/composer-gui/blob/master/screenshots/application-settings.png?raw=true)  
+[![Application settings](https://github.com/composer-gui/composer-gui/blob/master/screenshots/application-settings-binaries.png?raw=true)](https://github.com/composer-gui/composer-gui/blob/master/screenshots/application-settings-binaries.png?raw=true)  
 
 More screenshots: https://github.com/composer-gui/composer-gui/tree/master/screenshots/
 
